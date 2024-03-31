@@ -1,0 +1,256 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+:root {
+  --dark-blue: #053b50;
+  --bg-color: aliceblue;
+  --white: #fff;
+}
+* {
+  font-family: 'Mooli', sans-serif;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* -moz-osx-font-smoothing: grayscale; */
+  font-size: 18px;
+  line-height: 24px;
+}
+/*global Typography------------------------------------------------------------------ */
+h1 {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 72px;
+  color: var(--white);
+}
+h2 {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+}
+
+/* global container------------------------------------------------------------------ */
+.main-container {
+  width: 100%;
+}
+.container {
+  margin: 0 auto;
+  /* max-width: 1220px; */
+  
+}
+.header_fix_section {
+  position: sticky;
+  background-color: var(--dark-blue);
+  top: 0;
+  /* border-radius: 0 0 20px 20px; */
+  padding: 30px 20px;
+  z-index: 1;
+}
+/* glocal class css ------------------------------------------------------------------*/
+.center-txt {
+  text-align: center;
+}
+.reset-margin {
+  margin: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mt-0 {
+  margin-top: 0;
+}
+/* headeing css------------------------------------------------------------------ */
+.main-heading {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  padding-bottom: 30px;
+}
+/* tasks container css------------------------------------------------------------------ */
+
+.task-container ul, .filter_sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+.filter_sidebar ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+.task-container ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+
+/* task form css start ------------------------------------------------------------------*/
+input.input_task:focus {
+  color: black;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: inset 0 8px 13px -1px grey;
+}
+
+.input_task {
+  width: 100%;
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 10px 5px 10px 20px;
+  color: var(--white);
+}
+.task_form {
+  display: flex;
+  max-width: 800px;
+  margin: auto;
+}
+/* task lists css start ------------------------------------------------------------------*/
+
+.task_item {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  /* box-shadow: 14px 24px 72px 0px rgba(102, 102, 102, 0.1); */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  border-top: 5px solid;
+}
+
+
+/* Done todo css start------------------------------------------------------------------ */
+.done_todo {
+  text-decoration: line-through;
+  opacity: 0.5;
+  /* background-color: var(--grey); */
+}
+.hide_data{
+  display: none;
+}
+/* task edit css ------------------------------------------------------------------ */
+.task_icons {
+  margin-top: auto;
+  align-self: flex-end;
+}
+.task_icons svg {
+  font-size: 24px;
+}
+/* Filter css------------------------------------------------------------------ */
+.task-container, .filter_sidebar{
+  padding: 30px 20px;
+}
+/* .filter_sidebar {
+  background-color: var(--white);
+  position: fixed;
+  height: 100%;
+  width: 20%;
+} */
+/* .filter_sidebar ul li {
+ padding-bottom: 20px;
+} */
+/* .main-section{
+  display: flex;
+} */
+.empty-container{
+  text-align: center;
+}
+.empty-container img{
+  max-width: 42%;
+}
+
+.task_form img{
+  max-width: 41px;
+  padding-right: 5px;
+}
+.heading_image{
+  max-width: 48px;
+  padding-right: 7px;
+}
+.filter_sidebar ul li img{
+  max-width: 40px;
+}
+.filter_sidebar ul li{
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* .deleted_todo{
+  background-color: rgba(0, 0, 0, 0.377);
+} */
+
+.filter{
+  cursor: pointer;
+}
+.filters_all{
+  z-index: 1;
+  position: sticky;
+    background: var(--bg-color);
+    top: 207px;
+    box-shadow: 0px 0px 20px 0px #053b508a;
+}
+select.select-filter {
+  font-size: 18px;
+  line-height: 24px;
+  outline: none;
+  background: transparent;
+  padding: 9px 13px;
+  border: none;
+}
+
+button.filter.clear {
+  float: right;
+  background: red;
+  padding: 9px 13px;
+  color: white;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+
+
+/* media query css------------------------------------------------------------------ */
+@media (min-width: 1220px){
+  .task-container ul {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 767px) {
+  .task-container ul {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 420px) {
+  .task-container ul {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+@media (max-width:447px){
+  .filters_all {
+       top: 279.39px;
+}
+}
+@media (max-width: 550px){
+  .filter_sidebar ul {
+    flex-direction: column;
+}
+.filter_sidebar ul li{
+  padding-bottom: 20px;
+}
+}
